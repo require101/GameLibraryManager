@@ -6,7 +6,7 @@ public class GameDTO {
     private String icon;
     private boolean isComplete;
     private int rating;
-    private int steamGameID;
+    private String steamGameID;
     private int owningUserId;
     private int cost;
     private int numPlaythroughs;
@@ -53,11 +53,11 @@ public class GameDTO {
         this.rating = rating;
     }
 
-    public int getSteamGameID() {
+    public String getSteamGameID() {
         return steamGameID;
     }
 
-    public void setSteamGameID(int steamGameID) {
+    public void setSteamGameID(String steamGameID) {
         this.steamGameID = steamGameID;
     }
 
