@@ -2,6 +2,8 @@ package edu.uc.gamelibrarymanager.dao;
 
 import edu.uc.gamelibrarymanager.dto.GameDTO;
 
+import java.util.Optional;
+
 /**
  * Data methods for the Game Object
  * @author Samuel Curry
@@ -13,7 +15,7 @@ public interface IGameDAO {
      * @param id the id of the game to retrieve
      * @throws Exception any problem in the underlying query
      * */
-    public GameDTO fetchById(int id) throws Exception;
+    public Optional<GameDTO> fetchById(int id) throws Exception;
 
     /**
      * Fetches the game by Steam ID

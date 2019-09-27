@@ -2,6 +2,8 @@ package edu.uc.gamelibrarymanager.dao;
 
 import edu.uc.gamelibrarymanager.dto.UserDTO;
 
+import java.util.Optional;
+
 /**
  * Data methods for the User Object
  * @author Samuel Curry
@@ -28,5 +30,5 @@ public interface IUserDAO {
      * @param password the password of the user you are trying to locate
      * @throws Exception any problem in the underlying query
      * */
-    public UserDTO login(String username, String password) throws Exception;
+    public Optional<UserDTO> login(String username, String password) throws Exception;
 }
