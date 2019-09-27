@@ -13,14 +13,14 @@ public interface IUserDAO {
      * @param id the id of the user to retrieve
      * @throws Exception any problem in the underlying query
      * */
-    UserDTO fetchById(int id) throws Exception;
+    public UserDTO fetchById(int id) throws Exception;
 
     /**
      * Creates the User
      * @param user the User object to create the UserDTO with
      * @throws Exception any problem in the underlying persistence
      * */
-    UserDTO create(UserDTO user) throws Exception;
+    public UserDTO create(UserDTO user) throws Exception;
 
     /**
      * Tries to locate the user by username and password, returns null if nothing is found
@@ -28,5 +28,5 @@ public interface IUserDAO {
      * @param password the password of the user you are trying to locate
      * @throws Exception any problem in the underlying query
      * */
-    UserDTO login(String username, String password) throws Exception;
+    public UserDTO login(String username, String password) throws Exception;
 }
