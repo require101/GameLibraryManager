@@ -1,18 +1,9 @@
 package edu.uc.gamelibrarymanager.dto;
 
 public class UserDTO {
-    private int guid;
     private String username;
     private String hashedPassword;
     private int steamGuid;
-
-    public int getGuid() {
-        return guid;
-    }
-
-    public void setGuid(int guid) {
-        this.guid = guid;
-    }
 
     public String getUsername() {
         return username;

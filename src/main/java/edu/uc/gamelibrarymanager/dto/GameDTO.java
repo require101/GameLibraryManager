@@ -1,7 +1,6 @@
 package edu.uc.gamelibrarymanager.dto;
 
 public class GameDTO {
-    private int guid;
     private String name;
     private String icon;
     private boolean isComplete;
@@ -12,14 +11,6 @@ public class GameDTO {
     private int numPlaythroughs;
     private double percentSideMissionsCompleted;
     private int numEndingsCompleted;
-
-    public int getGuid() {
-        return guid;
-    }
-
-    public void setGuid(int guid) {
-        this.guid = guid;
-    }
 
     public String getName() {
         return name;
