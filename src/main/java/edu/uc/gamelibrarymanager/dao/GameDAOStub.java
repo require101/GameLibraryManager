@@ -1,9 +1,11 @@
 package edu.uc.gamelibrarymanager.dao;
 
 import edu.uc.gamelibrarymanager.dto.GameDTO;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+@Component
 public class GameDAOStub implements IGameDAO {
     /**
      * Fetches the game by ID

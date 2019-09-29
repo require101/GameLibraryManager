@@ -1,9 +1,11 @@
 package edu.uc.gamelibrarymanager.dao;
 
 import edu.uc.gamelibrarymanager.dto.UserDTO;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+@Component
 public class UserDAOStub implements IUserDAO {
     /**
      * Fetches the User by ID
