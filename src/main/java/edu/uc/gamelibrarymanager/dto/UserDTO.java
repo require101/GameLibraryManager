@@ -1,32 +1,27 @@
 package edu.uc.gamelibrarymanager.dto;
 
 public class UserDTO {
-    private String username;
-    private String hashedPassword;
-    private int steamGuid;
+    private String firebaseUserId;
+    private String steamGuid;
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getHashedPassword() {
-        return hashedPassword;
-    }
-
-    public void setHashedPassword(String hashedPassword) {
-        this.hashedPassword = hashedPassword;
-    }
-
-    public int getSteamGuid() {
-        return steamGuid;
-    }
-
-    public void setSteamGuid(int steamGuid) {
+    public UserDTO(String firebaseUserId, String steamGuid) {
+        this.firebaseUserId = firebaseUserId;
         this.steamGuid = steamGuid;
     }
 
+    public String getFirebaseUserId() {
+        return firebaseUserId;
+    }
+
+    public void setFirebaseUserId(String firebaseUserId) {
+        this.firebaseUserId = firebaseUserId;
+    }
+
+    public String getSteamGuid() {
+        return steamGuid;
+    }
+
+    public void setSteamGuid(String steamGuid) {
+        this.steamGuid = steamGuid;
+    }
 }
