@@ -13,7 +13,18 @@ public class GameDAOStub implements IGameDAO {
      */
     @Override
     public Optional<GameDTO> fetchById(int id) throws Exception {
-        return Optional.empty();
+        GameDTO mockDTO = new GameDTO(
+                1234,
+                "Test",
+                "qweqweqwe",
+                false,
+                1,
+                "123123",
+                123123,
+                30, 4,
+                2.5d,
+                2 );
+        return Optional.of(mockDTO);
     }
 
     /**
@@ -23,8 +34,19 @@ public class GameDAOStub implements IGameDAO {
      * @throws Exception any problem in the underlying query
      */
     @Override
-    public GameDTO fetchGameBySteamId(String steamId) throws Exception {
-        return null;
+    public Optional<GameDTO> fetchGameBySteamId(String steamId) throws Exception {
+        GameDTO mockDTO = new GameDTO(
+                1234,
+                "Test",
+                "qweqweqwe",
+                false,
+                1,
+                "123123",
+                123123,
+                30, 4,
+                2.5d,
+                2 );
+        return Optional.of(mockDTO);
     }
 
     /**
@@ -36,8 +58,10 @@ public class GameDAOStub implements IGameDAO {
     @Override
     public GameDTO create(GameDTO game) throws Exception {
         if(game.getName().isBlank()){
-            
+            throw new Exception("Game name cannot be null or empty.");
         }
+        game.setGuid(1234);
+        return game;
     }
 
     /**
@@ -48,7 +72,10 @@ public class GameDAOStub implements IGameDAO {
      * @throws Exception any problem in the underlying persistence
      */
     @Override
-    public GameDTO update(int id, GameDTO game) throws Exception {
-        return null;
+    public Optional<GameDTO> update(int id, GameDTO game) throws Exception {
+        if(id < 0){
+            throw new Exception("ID cannot be negative");
+        }
+        return Optional.of(game);
     }
 }

@@ -22,7 +22,7 @@ public interface IGameDAO {
      * @param steamId the steam ID of the game to retrieve
      * @throws Exception any problem in the underlying query
      * */
-    public GameDTO fetchGameBySteamId(String steamId) throws Exception;
+    public Optional<GameDTO> fetchGameBySteamId(String steamId) throws Exception;
 
     /**
      * Creates the game with the given GameDTO object
@@ -37,5 +37,5 @@ public interface IGameDAO {
      * @param game the game object to update the game with
      * @throws Exception any problem in the underlying persistence
      * */
-    public GameDTO update(int id, GameDTO game) throws Exception;
+    public Optional<GameDTO> update(int id, GameDTO game) throws Exception;
 }

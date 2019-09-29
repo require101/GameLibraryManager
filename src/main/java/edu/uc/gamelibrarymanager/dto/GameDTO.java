@@ -1,6 +1,8 @@
 package edu.uc.gamelibrarymanager.dto;
 
 public class GameDTO {
+
+    private int guid;
     private String name;
     private String icon;
     private boolean isComplete;
@@ -11,6 +13,39 @@ public class GameDTO {
     private int numPlaythroughs;
     private double percentSideMissionsCompleted;
     private int numEndingsCompleted;
+
+    public GameDTO(
+            int guid,
+            String name,
+            String icon,
+            boolean isComplete,
+            int rating,
+            String steamGameID,
+            int owningUserId,
+            int cost,
+            int numPlaythroughs,
+            double percentSideMissionsCompleted,
+            int numEndingsCompleted) {
+        this.guid = guid;
+        this.name = name;
+        this.icon = icon;
+        this.isComplete = isComplete;
+        this.rating = rating;
+        this.steamGameID = steamGameID;
+        this.owningUserId = owningUserId;
+        this.cost = cost;
+        this.numPlaythroughs = numPlaythroughs;
+        this.percentSideMissionsCompleted = percentSideMissionsCompleted;
+        this.numEndingsCompleted = numEndingsCompleted;
+    }
+
+    public int getGuid() {
+        return guid;
+    }
+
+    public void setGuid(int guid) {
+        this.guid = guid;
+    }
 
     public String getName() {
         return name;
