@@ -1,5 +1,6 @@
 package edu.uc.gamelibrarymanager.dao;
 
+import com.google.common.base.Strings;
 import edu.uc.gamelibrarymanager.dto.GameDTO;
 import org.springframework.stereotype.Component;
 
@@ -19,13 +20,12 @@ public class GameDAOStub implements IGameDAO {
                 1234,
                 "Test",
                 "qweqweqwe",
-                false,
+                "I",
                 1,
                 "123123",
                 123123,
                 30, 4,
-                2.5d,
-                2 );
+                2);
         return Optional.of(mockDTO);
     }
 
@@ -41,13 +41,12 @@ public class GameDAOStub implements IGameDAO {
                 1234,
                 "Test",
                 "qweqweqwe",
-                false,
+                "I",
                 1,
                 "123123",
                 123123,
                 30, 4,
-                2.5d,
-                2 );
+                2);
         return Optional.of(mockDTO);
     }
 
@@ -59,7 +58,7 @@ public class GameDAOStub implements IGameDAO {
      * */
     @Override
     public GameDTO create(GameDTO game) throws Exception {
-        if(game.getName().isBlank()){
+        if(Strings.isNullOrEmpty(game.getName())){
             throw new Exception("Game name cannot be null or empty.");
         }
         game.setGuid(1234);

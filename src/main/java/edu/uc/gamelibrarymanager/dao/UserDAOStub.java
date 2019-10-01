@@ -1,5 +1,6 @@
 package edu.uc.gamelibrarymanager.dao;
 
+import com.google.common.base.Strings;
 import edu.uc.gamelibrarymanager.dto.UserDTO;
 import org.springframework.stereotype.Component;
 
@@ -29,7 +30,7 @@ public class UserDAOStub implements IUserDAO {
      * */
     @Override
     public UserDTO create(UserDTO user) throws Exception {
-        if(user.getSteamGuid().isBlank()){
+        if(Strings.isNullOrEmpty(user.getSteamGuid())){
             throw new Exception("SteamGUID cannot be null or empty");
         }
         return new UserDTO("12f", "123b");
@@ -44,7 +45,7 @@ public class UserDAOStub implements IUserDAO {
      * */
     @Override
     public Optional<UserDTO> login(String username, String password) throws Exception {
-        if(username.isBlank() || password.isBlank()){
+        if(Strings.isNullOrEmpty(username) || Strings.isNullOrEmpty(password)){
             throw new Exception("Username and password cannot be null or empty");
         }
 
