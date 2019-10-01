@@ -2,26 +2,26 @@ package edu.uc.gamelibrarymanager.dto;
 
 public class GameDTO {
 
-    private int guid;
+    private String guid;
     private String name;
     private String icon;
     private String progressStatus;
     private int rating;
     private String steamGameID;
-    private int owningUserId;
+    private String owningUserId;
     private int cost;
     private int numPlaythroughs;
     private double percentSideMissionsCompleted;
     private int numEndingsCompleted;
 
     public GameDTO(
-            int guid,
+            String guid,
             String name,
             String icon,
             String progressStatus,
             int rating,
             String steamGameID,
-            int owningUserId,
+            String owningUserId,
             int numPlaythroughs,
             double percentSideMissionsCompleted,
             int numEndingsCompleted) {
@@ -46,11 +46,11 @@ public class GameDTO {
         this.progressStatus = progressStatus;
     }
 
-    public int getGuid() {
+    public String getGuid() {
         return guid;
     }
 
-    public void setGuid(int guid) {
+    public void setGuid(String guid) {
         this.guid = guid;
     }
 
@@ -86,11 +86,11 @@ public class GameDTO {
         this.steamGameID = steamGameID;
     }
 
-    public int getOwningUserId() {
+    public String getOwningUserId() {
         return owningUserId;
     }
 
-    public void setOwningUserId(int owningUserId) {
+    public void setOwningUserId(String owningUserId) {
         this.owningUserId = owningUserId;
     }
 

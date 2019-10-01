@@ -73,7 +73,10 @@ public class GameServiceStub implements IGameService{
      * @return returns the list of owned games, if found by ID, otherwise Optional.empty
      */
     @Override
-    public Optional<GameDTO> getOwnedGamesForSteamUser(String steamUserId, String apiUserId) throws Exception {
-        return Optional.empty();
+    public Optional<GameDTO[]> getOwnedGamesForSteamUser(String steamUserId, String apiUserId) throws Exception {
+        GameDTO[] gameDTOs = new GameDTO[2];
+        gameDTOs[0] = new GameDTO("123", "Test", "qweqwe", "I", 1, "123", "123", 1, 0.5, 1 );
+        gameDTOs[1] = new GameDTO("123", "Test1234", "qweqwe", "I", 1, "123", "123", 1, 0.5, 1 );
+        return Optional.of(gameDTOs);
     }
 }
