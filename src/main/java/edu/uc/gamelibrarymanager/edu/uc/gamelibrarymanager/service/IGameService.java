@@ -42,4 +42,12 @@ public interface IGameService {
      * @return returns the updated GameDTO, if found by ID, otherwise Optional.empty
      * */
     public Optional<GameDTO> update(int id, GameDTO game) throws Exception;
+
+    /**
+     * Grabs the list of owned games from a steam user
+     * @param steamUserId the steam user ID of the user you want the game list for
+     * @param apiUserId the ID of the user that is requesting the list of owned games
+     * @return returns the list of owned games, if found by ID, otherwise Optional.empty
+     * */
+    public Optional<GameDTO> getOwnedGamesForSteamUser(String steamUserId, String apiUserId) throws Exception;
 }

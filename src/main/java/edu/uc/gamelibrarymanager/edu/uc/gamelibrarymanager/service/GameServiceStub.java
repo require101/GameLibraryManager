@@ -4,7 +4,6 @@ import edu.uc.gamelibrarymanager.dao.IGameDAO;
 import edu.uc.gamelibrarymanager.dto.GameDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
 
 @Service
@@ -64,5 +63,17 @@ public class GameServiceStub implements IGameService{
     @Override
     public Optional<GameDTO> update(int id, GameDTO game) throws Exception {
         return gameDAO.update(id, game);
+    }
+
+    /**
+     * Grabs the list of owned games from a steam user
+     *
+     * @param steamUserId the steam user ID of the user you want the game list for
+     * @param apiUserId   the ID of the user that is requesting the list of owned games
+     * @return returns the list of owned games, if found by ID, otherwise Optional.empty
+     */
+    @Override
+    public Optional<GameDTO> getOwnedGamesForSteamUser(String steamUserId, String apiUserId) throws Exception {
+        return Optional.empty();
     }
 }

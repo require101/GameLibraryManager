@@ -9,6 +9,7 @@ public class GameDTO {
     private int rating;
     private String steamGameID;
     private int owningUserId;
+    private int cost;
     private int numPlaythroughs;
     private double percentSideMissionsCompleted;
     private int numEndingsCompleted;
@@ -35,6 +36,7 @@ public class GameDTO {
         this.percentSideMissionsCompleted = percentSideMissionsCompleted;
         this.numEndingsCompleted = numEndingsCompleted;
     }
+
 
     public String getProgressStatus() {
         return progressStatus;
@@ -90,6 +92,14 @@ public class GameDTO {
 
     public void setOwningUserId(int owningUserId) {
         this.owningUserId = owningUserId;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
     }
 
     public int getNumPlaythroughs() {
