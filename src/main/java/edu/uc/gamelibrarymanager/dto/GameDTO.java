@@ -5,7 +5,7 @@ public class GameDTO {
     private int guid;
     private String name;
     private String icon;
-    private boolean isComplete;
+    private String progressStatus;
     private int rating;
     private String steamGameID;
     private int owningUserId;
@@ -18,7 +18,7 @@ public class GameDTO {
             int guid,
             String name,
             String icon,
-            boolean isComplete,
+            String progressStatus,
             int rating,
             String steamGameID,
             int owningUserId,
@@ -29,7 +29,7 @@ public class GameDTO {
         this.guid = guid;
         this.name = name;
         this.icon = icon;
-        this.isComplete = isComplete;
+        this.progressStatus = progressStatus;
         this.rating = rating;
         this.steamGameID = steamGameID;
         this.owningUserId = owningUserId;
@@ -37,6 +37,14 @@ public class GameDTO {
         this.numPlaythroughs = numPlaythroughs;
         this.percentSideMissionsCompleted = percentSideMissionsCompleted;
         this.numEndingsCompleted = numEndingsCompleted;
+    }
+
+    public String getProgressStatus() {
+        return progressStatus;
+    }
+
+    public void setProgressStatus(String progressStatus) {
+        this.progressStatus = progressStatus;
     }
 
     public int getGuid() {
@@ -61,14 +69,6 @@ public class GameDTO {
 
     public void setIcon(String icon) {
         this.icon = icon;
-    }
-
-    public boolean isComplete() {
-        return isComplete;
-    }
-
-    public void setComplete(boolean complete) {
-        isComplete = complete;
     }
 
     public int getRating() {
