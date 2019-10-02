@@ -9,6 +9,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 public class GameLibraryManagerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GameController.class, args);
+        SpringApplication.run(GameLibraryManagerApplication.class, args);
     }
 }

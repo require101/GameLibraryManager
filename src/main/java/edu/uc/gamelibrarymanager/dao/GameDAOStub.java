@@ -17,13 +17,13 @@ public class GameDAOStub implements IGameDAO {
     @Override
     public Optional<GameDTO> fetchById(int id) throws Exception {
         GameDTO mockDTO = new GameDTO(
-                1234,
+                "1234",
                 "Test",
                 "qweqweqwe",
                 "I",
                 1,
                 "123123",
-                123123,
+                "123123",
                 30, 4,
                 2);
         return Optional.of(mockDTO);
@@ -38,13 +38,13 @@ public class GameDAOStub implements IGameDAO {
     @Override
     public Optional<GameDTO> fetchGameBySteamId(String steamId) throws Exception {
         GameDTO mockDTO = new GameDTO(
-                1234,
+                "1234",
                 "Test",
                 "qweqweqwe",
                 "I",
                 1,
                 "123123",
-                123123,
+                "123123",
                 30, 4,
                 2);
         return Optional.of(mockDTO);
@@ -61,7 +61,7 @@ public class GameDAOStub implements IGameDAO {
         if(Strings.isNullOrEmpty(game.getName())){
             throw new Exception("Game name cannot be null or empty.");
         }
-        game.setGuid(1234);
+        game.setGuid("1234");
         return game;
     }
 
