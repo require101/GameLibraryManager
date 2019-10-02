@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("game")
 public class GameController {
@@ -23,7 +25,7 @@ public class GameController {
     }
 
     @PostMapping("/")
-    ResponseEntity createGame(@RequestBody GameDTO newGame){
+    ResponseEntity createGame(@RequestBody @Valid GameDTO newGame){
         try {
             Assert.notNull(gameService, "Game service is null -- check DI container");
             return ResponseEntity
