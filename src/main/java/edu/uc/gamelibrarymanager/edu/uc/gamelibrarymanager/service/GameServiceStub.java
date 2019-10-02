@@ -61,7 +61,7 @@ public class GameServiceStub implements IGameService{
      * @throws Exception any problem in the underlying persistence
      */
     @Override
-    public Optional<GameDTO> update(int id, GameDTO game) throws Exception {
+    public Optional<GameDTO> update(String id, GameDTO game) throws Exception {
         return gameDAO.update(id, game);
     }
 

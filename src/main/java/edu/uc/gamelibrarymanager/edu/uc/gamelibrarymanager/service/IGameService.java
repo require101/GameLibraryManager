@@ -41,7 +41,7 @@ public interface IGameService {
      * @throws Exception any problem in the underlying persistence
      * @return returns the updated GameDTO, if found by ID, otherwise Optional.empty
      * */
-    public Optional<GameDTO> update(int id, GameDTO game) throws Exception;
+    public Optional<GameDTO> update(String id, GameDTO game) throws Exception;
 
     /**
      * Grabs the list of owned games from a steam user

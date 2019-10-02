@@ -73,9 +73,9 @@ public class GameDAOStub implements IGameDAO {
      * @return returns the updated GameDTO, if found by ID, otherwise Optional.empty
      * */
     @Override
-    public Optional<GameDTO> update(int id, GameDTO game) throws Exception {
-        if(id < 0){
-            throw new Exception("ID cannot be negative");
+    public Optional<GameDTO> update(String id, GameDTO game) throws Exception {
+        if(Strings.isNullOrEmpty(id)){
+            throw new Exception("ID cannot be null or empty");
         }
         return Optional.of(game);
     }

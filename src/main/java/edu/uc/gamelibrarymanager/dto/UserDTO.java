@@ -6,7 +6,7 @@ public class UserDTO {
 
     //this will be null until persisted
     private String guid;
-    
+
     @NotNull
     private String firebaseUserId;
 
