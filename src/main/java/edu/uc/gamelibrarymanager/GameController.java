@@ -53,7 +53,7 @@ public class GameController {
     }
 
     //since we do not implement authentication we cannot grab user ID from a token/session, so let anyone pass whatever ID they want into this endpoint
-    @RequestMapping(value = "/owned-games/user/${userId}/steam-user-id/${steamUserId}", method = RequestMethod.POST)
+    @RequestMapping(value = "/owned-games/user/{userId}/steam-user-id/{steamUserId}", method = RequestMethod.POST)
     ResponseEntity importOwnedGamesForSteamUser(@PathVariable("steamUserId") String steamUserId, @PathVariable("userId") String userId){
         try {
             Assert.notNull(gameService, "Game service us null -- check DI container");
