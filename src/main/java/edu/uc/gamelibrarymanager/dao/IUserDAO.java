@@ -16,7 +16,7 @@ public interface IUserDAO {
      * @return returns a UserDTO wrapped in an Optional
      * @throws Exception any problem in the underlying query
      * */
-    public Optional<UserDTO> fetchById(int id) throws Exception;
+    public Optional<UserDTO> fetchById(String id) throws Exception;
 
     /**
      * Creates the User

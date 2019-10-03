@@ -17,7 +17,7 @@ public interface IUserService {
      * @throws Exception any problem in the underlying query
      * @return returns UserDTO, if found, otherwise Optional.Empty
      * */
-    public Optional<UserDTO> getById(int id) throws Exception;
+    public Optional<UserDTO> getById(String id) throws Exception;
 
     /**
      * Creates the User with the given UserDTO data

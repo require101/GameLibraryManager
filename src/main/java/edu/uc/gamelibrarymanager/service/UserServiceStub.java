@@ -26,8 +26,8 @@ public class UserServiceStub implements IUserService {
      * @throws Exception any problem in the underlying query
      */
     @Override
-    public Optional<UserDTO> getById(int id) throws Exception {
-        return userDAO.fetchById(1234);
+    public Optional<UserDTO> getById(String id) throws Exception {
+        return userDAO.fetchById("1234");
     }
 
     /**

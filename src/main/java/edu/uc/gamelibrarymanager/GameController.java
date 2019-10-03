@@ -56,7 +56,7 @@ public class GameController {
     @RequestMapping(value = "/owned-games/user/{userId}/steam-user-id/{steamUserId}", method = RequestMethod.POST)
     ResponseEntity importOwnedGamesForSteamUser(@PathVariable("steamUserId") String steamUserId, @PathVariable("userId") String userId){
         try {
-            Assert.notNull(gameService, "Game service us null -- check DI container");
+            Assert.notNull(gameService, "Game service is null -- check DI container");
             Optional<GameDTO[]> ownedGames = gameService.getOwnedGamesForSteamUser(steamUserId);
             if(!ownedGames.isPresent()){
                 return (ResponseEntity) ResponseEntity
