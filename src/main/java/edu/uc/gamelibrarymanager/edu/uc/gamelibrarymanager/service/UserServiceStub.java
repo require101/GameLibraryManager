@@ -1,4 +1,4 @@
-package edu.uc.service;
+package edu.uc.gamelibrarymanager.service;
 
 import edu.uc.gamelibrarymanager.dao.IUserDAO;
 import edu.uc.gamelibrarymanager.dao.UserDAOStub;
