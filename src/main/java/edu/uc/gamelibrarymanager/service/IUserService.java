@@ -1,4 +1,4 @@
-package edu.uc.service;
+package edu.uc.gamelibrarymanager.service;
 
 import edu.uc.gamelibrarymanager.dto.UserDTO;
 

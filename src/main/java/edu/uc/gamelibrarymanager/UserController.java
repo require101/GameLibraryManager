@@ -1,5 +1,6 @@
-package edu.uc.gamelibrarymanager.edu.uc.gamelibrarymanager.service;
+package edu.uc.gamelibrarymanager;
 
+import edu.uc.gamelibrarymanager.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

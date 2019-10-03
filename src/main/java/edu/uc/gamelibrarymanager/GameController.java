@@ -1,7 +1,7 @@
 package edu.uc.gamelibrarymanager;
 
 import edu.uc.gamelibrarymanager.dto.GameDTO;
-import edu.uc.gamelibrarymanager.edu.uc.gamelibrarymanager.service.IGameService;
+import edu.uc.gamelibrarymanager.service.IGameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
