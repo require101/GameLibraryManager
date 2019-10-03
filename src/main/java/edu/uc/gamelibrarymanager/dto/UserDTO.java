@@ -1,5 +1,6 @@
 package edu.uc.gamelibrarymanager.dto;
 
+
 import javax.validation.constraints.NotNull;
 
 public class UserDTO {
