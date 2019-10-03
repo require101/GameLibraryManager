@@ -1,4 +1,4 @@
-package edu.uc.gamelibrarymanager.edu.uc.gamelibrarymanager.service;
+package edu.uc.gamelibrarymanager.service;
 
 import edu.uc.gamelibrarymanager.dao.IGameDAO;
 import edu.uc.gamelibrarymanager.dto.GameDTO;
