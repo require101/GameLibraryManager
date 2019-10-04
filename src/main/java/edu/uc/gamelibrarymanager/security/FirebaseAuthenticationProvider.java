@@ -13,7 +13,7 @@ package edu.uc.gamelibrarymanager.security;
         import org.springframework.util.Assert;
 
 @Component
-public class AuthenticationProvider extends AbstractUserDetailsAuthenticationProvider {
+public class FirebaseAuthenticationProvider extends AbstractUserDetailsAuthenticationProvider {
 
     @Autowired
     private FirebaseAuth firebaseAuth;

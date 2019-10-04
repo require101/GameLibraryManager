@@ -1,7 +1,7 @@
 package edu.uc.gamelibrarymanager;
 
 import com.google.api.client.http.HttpMethods;
-import edu.uc.gamelibrarymanager.security.AuthenticationProvider;
+import edu.uc.gamelibrarymanager.security.FirebaseAuthenticationProvider;
 import edu.uc.gamelibrarymanager.security.FirebaseAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -23,7 +23,7 @@ import java.util.Arrays;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private AuthenticationProvider authenticationProvider;
+    private FirebaseAuthenticationProvider authenticationProvider;
 
     @Bean
     @Override

@@ -1,6 +1,8 @@
 package edu.uc.gamelibrarymanager;
 
+import edu.uc.gamelibrarymanager.dto.LoginRequestDTO;
 import edu.uc.gamelibrarymanager.dto.UserDTO;
+import edu.uc.gamelibrarymanager.security.FirebaseAuthenticationProvider;
 import edu.uc.gamelibrarymanager.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +17,9 @@ import javax.validation.Valid;
 public class UserController {
     @Autowired
     private IUserService userService;
+
+    @Autowired
+    private FirebaseAuthenticationProvider authService;
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     ResponseEntity getUserById(@PathVariable("id") String userId){
@@ -47,9 +52,11 @@ public class UserController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    ResponseEntity login(@PathVariable("username") String username, @PathVariable("password") String password){
+    ResponseEntity login(@RequestBody @Valid LoginRequestDTO loginRequest){
             try {
                 Assert.notNull(userService, "User service is null -- check DI container");
+                Assert.notNull(authService, "Auth provider is null -- check DI container");
+                authService.retrieveUser();
                 return ResponseEntity
                         .status(HttpStatus.INTERNAL_SERVER_ERROR)
                         .body("An error occurred while trying to authorize the user");
