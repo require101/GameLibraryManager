@@ -1,7 +1,6 @@
-package edu.uc.gamelibrarymanager;
+package edu.uc.gamelibrarymanager.security;
 
 import com.google.common.base.Strings;
-import edu.uc.gamelibrarymanager.dto.FirebaseAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;

@@ -1,10 +1,8 @@
-package edu.uc.gamelibrarymanager;
+package edu.uc.gamelibrarymanager.security;
 
         import com.google.api.core.ApiFuture;
         import com.google.firebase.auth.FirebaseAuth;
         import com.google.firebase.auth.FirebaseToken;
-        import edu.uc.gamelibrarymanager.dto.FirebaseAuthenticationToken;
-        import edu.uc.gamelibrarymanager.dto.FirebaseUser;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
         import org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider;

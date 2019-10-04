@@ -1,4 +1,4 @@
-package edu.uc.gamelibrarymanager.dto;
+package edu.uc.gamelibrarymanager.security;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
