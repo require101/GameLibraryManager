@@ -1,9 +1,11 @@
 package edu.uc.gamelibrarymanager.dto;
 
 
+import edu.uc.gamelibrarymanager.security.FirebaseUser;
+
 import javax.validation.constraints.NotNull;
 
-public class UserDTO {
+public class UserDTO extends FirebaseUser {
 
     //this will be null until persisted
     private String guid;
@@ -14,7 +16,8 @@ public class UserDTO {
     @NotNull
     private String steamGuid;
 
-    public UserDTO(String firebaseUserId, String steamGuid) {
+    public UserDTO(String firebaseUserId, String steamGuid, String email, String uid) {
+        super(email, uid);
         this.firebaseUserId = firebaseUserId;
         this.steamGuid = steamGuid;
     }
