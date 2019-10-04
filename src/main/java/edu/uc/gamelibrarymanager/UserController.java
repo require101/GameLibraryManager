@@ -51,8 +51,8 @@ public class UserController {
             try {
                 Assert.notNull(userService, "User service is null -- check DI container");
                 return ResponseEntity
-                        .status(HttpStatus.OK)
-                        .body();
+                        .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                        .body("An error occurred while trying to authorize the user");
             } catch (Exception e){
                 //do not expose error to end user because of security stuff
                 return ResponseEntity
@@ -60,7 +60,6 @@ public class UserController {
                         .body("An error occurred while trying to authorize the user");
             }
         }
-    }
 
 
 }

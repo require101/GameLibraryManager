@@ -17,7 +17,7 @@ public interface IUserService {
      * @throws Exception any problem in the underlying query
      * @return returns UserDTO, if found, otherwise Optional.Empty
      * */
-    public Optional<UserDTO> getById(String id) throws Exception;
+    Optional<UserDTO> getById(String id) throws Exception;
 
     /**
      * Creates the User with the given UserDTO data
@@ -25,7 +25,7 @@ public interface IUserService {
      * @throws Exception any problem in the underlying persistence
      * @return returns the created UserDTO
      * */
-    public UserDTO create(UserDTO user) throws Exception;
+    UserDTO create(UserDTO user) throws Exception;
 
     /**
      * Tries to locate the user and verify him/her for login
@@ -33,6 +33,12 @@ public interface IUserService {
      * @param password the password of the user to try to login with
      * @return UserDTO if valid login, otherwise Optional.empty
      * */
-    public Optional<UserDTO> login(String username, String password) throws Exception;
+     Optional<UserDTO> login(String username, String password) throws Exception;
 
+    /**
+     * Verifies token and pulls user uid from firebase
+     * @param token the token to authenticate
+     * @return the uid of the user, if valid, otherwise Optional.empty
+     * */
+     Optional<String> getUserIdFromToken(String token) throws Exception;
 }

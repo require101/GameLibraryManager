@@ -16,7 +16,7 @@ public interface IGameDAO {
      * @throws Exception any problem in the underlying query
      * @return returns the GameDTO, if found, otherwise Optional.empty
      * */
-    public Optional<GameDTO> fetchById(int id) throws Exception;
+    Optional<GameDTO> fetchById(int id) throws Exception;
 
     /**
      * Fetches the game by Steam ID
@@ -24,7 +24,7 @@ public interface IGameDAO {
      * @throws Exception any problem in the underlying query
      * @return returns the GameDTO, if found, otherwise Optional.empty
      * */
-    public Optional<GameDTO> fetchGameBySteamId(String steamId) throws Exception;
+    Optional<GameDTO> fetchGameBySteamId(String steamId) throws Exception;
 
     /**
      * Creates the game with the given GameDTO object
@@ -32,7 +32,7 @@ public interface IGameDAO {
      * @throws Exception any problem in the underlying persistence
      * @return returns the GameDTO that was created
      * */
-    public GameDTO create(GameDTO game) throws Exception;
+    GameDTO create(GameDTO game) throws Exception;
 
     /**
      * Updates the game by the given ID with the given GameDTO
@@ -41,5 +41,5 @@ public interface IGameDAO {
      * @throws Exception any problem in the underlying persistence
      * @return returns the updated GameDTO, if found by ID, otherwise Optional.empty
      * */
-    public Optional<GameDTO> update(String id, GameDTO game) throws Exception;
+    Optional<GameDTO> update(String id, GameDTO game) throws Exception;
 }
