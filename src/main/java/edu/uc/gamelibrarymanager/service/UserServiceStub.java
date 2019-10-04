@@ -55,17 +55,4 @@ public class UserServiceStub implements IUserService {
         return userDAO.login(username, password);
     }
 
-    /**
-     * Verifies token and pulls user uid from firebase
-     *
-     * @param token the token to authenticate
-     * @return the uid of the user, if valid, otherwise Optional.empty
-     */
-    @Override
-    public Optional<String> getUserIdFromToken(String token) throws Exception {
-        if(Strings.isNullOrEmpty(token)){
-            throw new Exception("Token cannot be null or empty!");
-        }
-        return Optional.of("1231245");
-    }
 }
