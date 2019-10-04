@@ -1,6 +1,5 @@
 package edu.uc.gamelibrarymanager;
 
-import edu.uc.gamelibrarymanager.dto.LoginRequestDTO;
 import edu.uc.gamelibrarymanager.dto.UserDTO;
 import edu.uc.gamelibrarymanager.security.FirebaseAuthenticationProvider;
 import edu.uc.gamelibrarymanager.service.IUserService;
