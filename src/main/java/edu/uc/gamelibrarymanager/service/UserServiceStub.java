@@ -43,16 +43,4 @@ public class UserServiceStub implements IUserService {
         return userDAO.create(user);
     }
 
-    /**
-     * Tries to locate the user and verify him/her for login
-     *
-     * @param username the username of the user to try to login with
-     * @param password the password of the user to try to login with
-     * @return UserDTO if valid login, otherwise Optional.empty
-     */
-    @Override
-    public Optional<UserDTO> login(String username, String password) throws Exception {
-        return userDAO.login(username, password);
-    }
-
 }

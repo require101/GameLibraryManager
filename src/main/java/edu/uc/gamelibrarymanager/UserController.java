@@ -51,22 +51,4 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    ResponseEntity login(@RequestBody @Valid LoginRequestDTO loginRequest){
-            try {
-                Assert.notNull(userService, "User service is null -- check DI container");
-                Assert.notNull(authService, "Auth provider is null -- check DI container");
-                authService.retrieveUser();
-                return ResponseEntity
-                        .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                        .body("An error occurred while trying to authorize the user");
-            } catch (Exception e){
-                //do not expose error to end user because of security stuff
-                return ResponseEntity
-                        .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                        .body("An error occurred while trying to authorize the user");
-            }
-        }
-
-
 }

@@ -27,12 +27,4 @@ public interface IUserService {
      * */
     UserDTO create(UserDTO user) throws Exception;
 
-    /**
-     * Tries to locate the user and verify him/her for login
-     * @param username the username of the user to try to login with
-     * @param password the password of the user to try to login with
-     * @return UserDTO if valid login, otherwise Optional.empty
-     * */
-     Optional<UserDTO> login(String username, String password) throws Exception;
-
 }
