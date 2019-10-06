@@ -3,6 +3,7 @@ package edu.uc.gamelibrarymanager.security;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
 
 public class FirebaseUser implements UserDetails {
@@ -13,7 +14,10 @@ public class FirebaseUser implements UserDetails {
     private final boolean accountNonLocked = true;
     private final boolean accountNonExpired = true;
     private final String password = null;
+    @NotNull
     private String username = null;
+
+    @NotNull
     private String id = null;
 
     public FirebaseUser(String email, String uid) {
