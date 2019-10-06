@@ -1,4 +1,4 @@
-package edu.uc.gamelibrarymanager.service;
+package edu.uc.gamelibrarymanager.security;
 
 import com.google.api.client.http.HttpMethods;
 import edu.uc.gamelibrarymanager.security.FirebaseAuthenticationProvider;
