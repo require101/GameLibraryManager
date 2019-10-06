@@ -16,7 +16,7 @@ public interface IUserDAO {
      * @return returns a UserDTO wrapped in an Optional
      * @throws Exception any problem in the underlying query
      * */
-    public Optional<UserDTO> fetchById(int id) throws Exception;
+    Optional<UserDTO> fetchById(String id) throws Exception;
 
     /**
      * Creates the User
@@ -24,7 +24,7 @@ public interface IUserDAO {
      * @return returns the UserDTO that was created
      * @throws Exception any problem in the underlying persistence
      * */
-    public UserDTO create(UserDTO user) throws Exception;
+    UserDTO create(UserDTO user) throws Exception;
 
     /**
      * Tries to locate the user by username and password, returns null if nothing is found
@@ -33,5 +33,5 @@ public interface IUserDAO {
      * @return returns the UserDTO, if authenticated, wrapped in an optional. Optional.empty if not authenticated.
      * @throws Exception any problem in the underlying query
      * */
-    public Optional<UserDTO> login(String username, String password) throws Exception;
+    Optional<UserDTO> login(String username, String password) throws Exception;
 }

@@ -1,9 +1,11 @@
-package edu.uc.gamelibrarymanager.edu.uc.gamelibrarymanager.service;
+package edu.uc.gamelibrarymanager.service;
 
 import edu.uc.gamelibrarymanager.dao.IGameDAO;
 import edu.uc.gamelibrarymanager.dto.GameDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
+
 import java.util.Optional;
 
 @Service
@@ -25,6 +27,7 @@ public class GameServiceStub implements IGameService{
      */
     @Override
     public Optional<GameDTO> fetchById(int id) throws Exception {
+        Assert.notNull(gameDAO, "GameDAO is null -- check DI Container");
         return gameDAO.fetchById(id);
     }
 
@@ -37,6 +40,7 @@ public class GameServiceStub implements IGameService{
      */
     @Override
     public Optional<GameDTO> fetchGameBySteamId(String steamId) throws Exception {
+        Assert.notNull(gameDAO, "GameDAO is null -- check DI Container");
         return gameDAO.fetchGameBySteamId(steamId);
     }
 
@@ -49,6 +53,7 @@ public class GameServiceStub implements IGameService{
      */
     @Override
     public GameDTO create(GameDTO game) throws Exception {
+        Assert.notNull(gameDAO, "GameDAO is null -- check DI Container");
         return gameDAO.create(game);
     }
 
@@ -61,7 +66,8 @@ public class GameServiceStub implements IGameService{
      * @throws Exception any problem in the underlying persistence
      */
     @Override
-    public Optional<GameDTO> update(int id, GameDTO game) throws Exception {
+    public Optional<GameDTO> update(String id, GameDTO game) throws Exception {
+        Assert.notNull(gameDAO, "GameDAO is null -- check DI Container");
         return gameDAO.update(id, game);
     }
 
@@ -73,7 +79,7 @@ public class GameServiceStub implements IGameService{
      * @return returns the list of owned games, if found by ID, otherwise Optional.empty
      */
     @Override
-    public Optional<GameDTO[]> getOwnedGamesForSteamUser(String steamUserId, String apiUserId) throws Exception {
+    public Optional<GameDTO[]> getOwnedGamesForSteamUser(String steamUserId) throws Exception {
         GameDTO[] gameDTOs = new GameDTO[2];
         gameDTOs[0] = new GameDTO("123", "Test", "qweqwe", "I", 1, "123", "123", 1, 0.5, 1 );
         gameDTOs[1] = new GameDTO("123", "Test1234", "qweqwe", "I", 1, "123", "123", 1, 0.5, 1 );

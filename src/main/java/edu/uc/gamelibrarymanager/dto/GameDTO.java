@@ -1,17 +1,39 @@
 package edu.uc.gamelibrarymanager.dto;
 
-public class GameDTO {
+import javax.validation.constraints.NotNull;
 
+public class GameDTO {
+    //guid will start out as null until persisted
     private String guid;
+
+    @NotNull
     private String name;
+
+    @NotNull
     private String icon;
+
+    @NotNull
     private String progressStatus;
+
+    @NotNull
     private int rating;
+
+    @NotNull
     private String steamGameID;
+
+    @NotNull
     private String owningUserId;
+
+    @NotNull
     private int cost;
+
+    @NotNull
     private int numPlaythroughs;
+
+    @NotNull
     private double percentSideMissionsCompleted;
+
+    @NotNull
     private int numEndingsCompleted;
 
     public GameDTO(

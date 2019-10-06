@@ -15,11 +15,11 @@ public class UserDAOStub implements IUserDAO {
      * @throws Exception any problem in the underlying query
      * */
     @Override
-    public Optional<UserDTO> fetchById(int id) throws Exception {
-        if(id < 0){
+    public Optional<UserDTO> fetchById(String id) throws Exception {
+        if(Strings.isNullOrEmpty(id)){
             throw new Exception("ID cannot be negative");
         }
-        return Optional.of(new UserDTO("12f", "123b"));
+        return Optional.of(new UserDTO("12f", "123b", "12312213", "qweqwe"));
     }
 
     /**
@@ -33,7 +33,7 @@ public class UserDAOStub implements IUserDAO {
         if(Strings.isNullOrEmpty(user.getSteamGuid())){
             throw new Exception("SteamGUID cannot be null or empty");
         }
-        return new UserDTO("12f", "123b");
+        return new UserDTO("12f", "123b", "12312213", "qweqwe");
     }
 
     /**
@@ -49,6 +49,6 @@ public class UserDAOStub implements IUserDAO {
             throw new Exception("Username and password cannot be null or empty");
         }
 
-        return Optional.of(new UserDTO("12f", "123b"));
+        return Optional.of(new UserDTO("12f", "123b", "12312213", "qweqwe"));
     }
 }
