@@ -2,7 +2,7 @@ package edu.uc.gamelibrarymanager.service;
 
 import com.google.api.core.ApiFuture;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.FirebaseToken;
 import com.google.firebase.auth.UserRecord;
 import edu.uc.gamelibrarymanager.dao.IUserDAO;
 import edu.uc.gamelibrarymanager.dto.UserDTO;
@@ -44,25 +44,20 @@ public class UserServiceStub implements IUserService {
      */
     @Override
     public UserDTO create(UserDTO user) throws Exception {
-        try {
-            Assert.notNull(FirebaseAuth.getInstance(), "Firebase instance is null -- check configuration");
-            UserRecord.CreateRequest request = new UserRecord.CreateRequest()
-                    .setEmail(user.getUsername())
-                    .setEmailVerified(false)
-                    .setPassword(user.getPassword())
-                    .setDisplayName(user.getUsername())
-                    .setDisabled(false);
-            ApiFuture<UserRecord> userRecord = FirebaseAuth.getInstance().createUserAsync(request);
-            UserRecord savedUser = userRecord.get();
-            //clone request UserDTO to add FirebaseUID to -- keeps method pure
-            UserDTO copiedRequestUser = (UserDTO) user.clone();
-            copiedRequestUser.setFirebaseUserId(savedUser.getUid());
+        Assert.notNull(FirebaseAuth.getInstance(), "Firebase instance is null -- check configuration");
+        UserRecord.CreateRequest request = new UserRecord.CreateRequest()
+                .setEmail(user.getUsername())
+                .setEmailVerified(false)
+                .setPassword(user.getPassword())
+                .setDisplayName(user.getUsername())
+                .setDisabled(false);
+        ApiFuture<UserRecord> userRecord = FirebaseAuth.getInstance().createUserAsync(request);
+        UserRecord savedUser = userRecord.get();
+        //clone request UserDTO to add FirebaseUID to -- keeps method pure
+        UserDTO copiedRequestUser = (UserDTO) user.clone();
+        copiedRequestUser.setFirebaseUserId(savedUser.getUid());
 
-            return userDAO.create(copiedRequestUser);
-        } catch (FirebaseAuthException e){
-            //TODO: catch specific firebase auth exception because there are many
-            throw new Exception("An error occurred while saving to firebase");
-        }
+        return userDAO.create(copiedRequestUser);
     }
 
 }
