@@ -1,11 +1,14 @@
 package edu.uc.gamelibrarymanager.service;
 
-import com.google.common.base.Strings;
+import com.google.api.core.ApiFuture;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.UserRecord;
 import edu.uc.gamelibrarymanager.dao.IUserDAO;
-import edu.uc.gamelibrarymanager.dao.UserDAOStub;
 import edu.uc.gamelibrarymanager.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
 import java.util.Optional;
 
@@ -28,6 +31,7 @@ public class UserServiceStub implements IUserService {
      */
     @Override
     public Optional<UserDTO> getById(String id) throws Exception {
+        Assert.notNull(userDAO, "UserDAO is null -- check DI Container");
         return userDAO.fetchById("1234");
     }
 
@@ -40,7 +44,25 @@ public class UserServiceStub implements IUserService {
      */
     @Override
     public UserDTO create(UserDTO user) throws Exception {
-        return userDAO.create(user);
+        try {
+            Assert.notNull(FirebaseAuth.getInstance(), "Firebase instance is null -- check configuration");
+            UserRecord.CreateRequest request = new UserRecord.CreateRequest()
+                    .setEmail(user.getUsername())
+                    .setEmailVerified(false)
+                    .setPassword(user.getPassword())
+                    .setDisplayName(user.getUsername())
+                    .setDisabled(false);
+            ApiFuture<UserRecord> userRecord = FirebaseAuth.getInstance().createUserAsync(request);
+            UserRecord savedUser = userRecord.get();
+            //clone request UserDTO to add FirebaseUID to -- keeps method pure
+            UserDTO copiedRequestUser = (UserDTO) user.clone();
+            copiedRequestUser.setFirebaseUserId(savedUser.getUid());
+
+            return userDAO.create(copiedRequestUser);
+        } catch (FirebaseAuthException e){
+            //TODO: catch specific firebase auth exception because there are many
+            throw new Exception("An error occurred while saving to firebase");
+        }
     }
 
 }

@@ -4,6 +4,8 @@ import edu.uc.gamelibrarymanager.dao.IGameDAO;
 import edu.uc.gamelibrarymanager.dto.GameDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
+
 import java.util.Optional;
 
 @Service
@@ -25,6 +27,7 @@ public class GameServiceStub implements IGameService{
      */
     @Override
     public Optional<GameDTO> fetchById(int id) throws Exception {
+        Assert.notNull(gameDAO, "GameDAO is null -- check DI Container");
         return gameDAO.fetchById(id);
     }
 
@@ -37,6 +40,7 @@ public class GameServiceStub implements IGameService{
      */
     @Override
     public Optional<GameDTO> fetchGameBySteamId(String steamId) throws Exception {
+        Assert.notNull(gameDAO, "GameDAO is null -- check DI Container");
         return gameDAO.fetchGameBySteamId(steamId);
     }
 
@@ -49,6 +53,7 @@ public class GameServiceStub implements IGameService{
      */
     @Override
     public GameDTO create(GameDTO game) throws Exception {
+        Assert.notNull(gameDAO, "GameDAO is null -- check DI Container");
         return gameDAO.create(game);
     }
 
@@ -62,6 +67,7 @@ public class GameServiceStub implements IGameService{
      */
     @Override
     public Optional<GameDTO> update(String id, GameDTO game) throws Exception {
+        Assert.notNull(gameDAO, "GameDAO is null -- check DI Container");
         return gameDAO.update(id, game);
     }
 
