@@ -9,8 +9,7 @@ public class UserDTO extends FirebaseUser implements Cloneable {
 
     //this will be null until persisted
     private String guid;
-
-    @NotNull
+    
     private String firebaseUserId;
 
     @NotNull
