@@ -2,7 +2,6 @@ package edu.uc.gamelibrarymanager.service;
 
 import com.google.api.core.ApiFuture;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseToken;
 import com.google.firebase.auth.UserRecord;
 import edu.uc.gamelibrarymanager.dao.IUserDAO;
 import edu.uc.gamelibrarymanager.dto.UserDTO;
