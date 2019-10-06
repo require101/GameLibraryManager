@@ -18,6 +18,7 @@ Our Storyboard can be accessed from  two locations, in two formats. We have also
 
 ## III. Functional Requirements
 In order for our application to be successful, it needs to satisfy the following requirements:
+
 **1. As a User, I want to be able to see my library of games from Steam, so that I can rate them. For example:**
 >Given I am a User, when I enter my steam ID, then my complete steam library is pulled into my profile.
 >Given I am a User, when I enter an incorrect steam ID, then the UI properly reflects that no profile could be found.
