@@ -17,7 +17,6 @@ public class FirebaseUser implements UserDetails {
     @NotNull
     private String username = null;
 
-    @NotNull
     private String id = null;
 
     public FirebaseUser(String email, String uid) {
