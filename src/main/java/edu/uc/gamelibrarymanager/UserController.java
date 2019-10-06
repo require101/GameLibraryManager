@@ -1,10 +1,6 @@
 package edu.uc.gamelibrarymanager;
 
-import com.google.api.core.ApiFuture;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.UserRecord;
 import edu.uc.gamelibrarymanager.dto.UserDTO;
-import edu.uc.gamelibrarymanager.security.FirebaseAuthenticationProvider;
 import edu.uc.gamelibrarymanager.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,9 +14,6 @@ import javax.validation.Valid;
 public class UserController {
     @Autowired
     private IUserService userService;
-
-    @Autowired
-    private FirebaseAuthenticationProvider authService;
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     ResponseEntity getUserById(@PathVariable("id") String userId){
