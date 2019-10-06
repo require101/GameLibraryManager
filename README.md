@@ -1,7 +1,7 @@
-# GameLibraryManager
+# Game Library Manager
 *Easier Planning for Better Gaming*
 
-Official Design Docuemnt:
+Official Design Document:
 ```sh
 https://docs.google.com/document/d/1dQRY9pJxz25hqba-wcnSN5TplSxzZrK5cBl_xGRUkZI/edit?usp=sharing
 ```
